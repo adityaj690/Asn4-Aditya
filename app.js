@@ -9,7 +9,7 @@ const handlebars = require('handlebars');
 // var path = require('path');
 // const fs = require('fs');
 
-var port     = process.env.PORT || 8000;
+var port     = process.env.port || 8000;
 app.use(bodyParser.urlencoded({'extended':'true'}));            
 app.use(bodyParser.json());                                     
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
