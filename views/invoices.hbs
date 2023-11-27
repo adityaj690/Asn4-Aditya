@@ -3,39 +3,120 @@
 <head>
     <title>Invoices</title>
     <style>
+    /* Style for the entire table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #333;
+    margin-top: 10px;
+    text-align: center;
+}
 
-        img{
-            width: 50px;
-            height: 50px;
+/* Style for table headers */
+th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #333;
+}
+
+/* Style for table data cells */
+td {
+    text-align: center;
+    padding: 2px;
+    border: 1px solid #333;
+    color: black;
+}
+
+/* Style for alternating rows */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for hover effect on rows */
+tbody tr:hover {
+    background-color: #ccc;
+}
+
+/* Styles for pagination */
+        .pagination {
+            margin-top: 10px;
+            text-align: center;
         }
-    </style>
+        .pagination ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .pagination li {
+            display: inline;
+            margin-right: 5px;
+        }
+        .pagination a {
+            text-decoration: none;
+            padding: 4px 8px;
+            background-color: #f2f2f2;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+</style>
 </head>
 <body>
     <h1>Invoices</h1>
     <table border="1">
         <thead>
             <tr>
-                <th>ISBN</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Image</th>
-                <th>Inventory</th>
-                <th>category</th>
-                <th>Price_in_thousand</th>
-                <th>manufacturer</th>
+                <th>Invoice No</th>
+        <th>Image</th>
+        <th>Manufacturer</th>
+        <th>Class</th>
+        <th>Sales (Thousands)</th>
+        <th>Year Resale Value</th>
+        <th>Vehicle Type</th>
+        <th>Price (Thousands)</th>
+        <th>Engine Size</th>
+        <th>Horsepower</th>
+        <th>Wheelbase</th>
+        <th>Width</th>
+        <th>Length</th>
+        <th>Curb Weight</th>
+        <th>Fuel Capacity</th>
+        <th>Fuel Efficiency</th>
+        <th>Latest Launch</th>
+        <th>Power Perf Factor</th>
             </tr>
         </thead>
         <tbody>
             {{#each invoices}}
                 <tr>
-                    <td>{{this.ISBN}}</td>
-                    <td>{{this.title}}</td>
-                    <td>{{this.author}}</td>
-                    <td><img src="{{this.img}}" alt="Image"></td>
-                    <td>{{this.inventory}}</td>
-                    <td>{{this.category}}</td>
-                    <td>{{this.Price_in_thousand}}</td>
-                    <td>{{this.manufacturer}}</td>
+          <td>{{this.InvoiceNo}}</td>
+          <td><img src="{{this.image}}" alt="{{this.Manufacturer}}" style="width:100px; height:auto;"></td>
+          <td>{{this.Manufacturer}}</td>
+          <td>{{this.class}}</td>
+          <td>{{this.Sales_in_thousands}}</td>
+          <td>{{this.__year_resale_value}}</td>
+          <td>{{this.Vehicle_type}}</td>
+          <td>{{this.Price_in_thousands}}</td>
+          <td>{{this.Engine_size}}</td>
+          <td>{{this.Horsepower}}</td>
+          <td>{{this.Wheelbase}}</td>
+          <td>{{this.Width}}</td>
+          <td>{{this.Length}}</td>
+          <td>{{this.Curb_weight}}</td>
+          <td>{{this.Fuel_capacity}}</td>
+          <td>{{this.Fuel_efficiency}}</td>
+          <td>{{this.Latest_Launch}}</td>
+          <td>{{this.Power_perf_factor}}</td>
                 </tr>
             {{/each}}
         </tbody>

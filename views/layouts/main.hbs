@@ -13,19 +13,84 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+
+  <style>
+  body {
+    padding: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    width: 100%;
+    background-color: #ffcccb;
+    color: #333;
+    text-align: center;
+    /* padding: 10px; */
+    border-bottom: 3px solid #ff9999;
+    position: fixed;
+
+}
+
+.content {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: #d9f2d9;
+    box-shadow: 0 0 0 rgba(0,0,0,0.1);
+    overflow-y: auto; 
+    height: calc(85vh - 140px); 
+}
+
+footer {
+    background-color: #ccddff;
+    color: #333;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.highlight {
+    background-color: #ff0; /* Yellow background for highlight */
+    font-weight: bold; /* Optional: makes the text bold */
+  }
+</style>
   </head>
   <body>
     <header>
       <!-- Displaying name and student ID in the header -->
       <h1>Aditya Joshi</h1>
       <p>Student ID: N01545536</p>
-
+      <p>Assignment - 4</p>
        <!-- Navigation bar -->
  <!-- Add this HTML to your 'main.hbs' file where the header section is defined -->
-
+   
 
 
     </header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Car Sales</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/api/insert">Insert New Data</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/api/invoices">Show All Data</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     <div class="content">
       <!-- Dynamic content/messages will be displayed here -->
       {{{body}}}

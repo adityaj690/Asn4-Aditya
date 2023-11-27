@@ -36,7 +36,13 @@ mongoose.connect(database.url).then(() => console.log('Connected Successfully'))
 var Employee = require('./models/employee');
 
 const Invoice = require('./models/invoice');
+const CarSales = require('./models/invoice');
  
+
+app.get('/', function (req, res) {
+    res.render('index', { title: 'Assignment 4' });
+  });
+
 // inserting the data in the DB table 
 app.post('/api/employees', function(req, res) {
     // Extracting data from the request body
@@ -56,9 +62,6 @@ app.post('/api/employees', function(req, res) {
         res.send(err);
     });
 });
-
-
-
 
 
 //get all employee data from db
@@ -125,15 +128,32 @@ app.delete('/api/employees/:employee_id', function(req, res) {
 
 // Create new Invoice 
 
+// GET form to insert InvoiceNo
+app.get('/api/insert', (req, res) => {
+    res.render('InsertnewData');
+  });
+  
+
 app.post('/api/invoices',async (req,res)=>{
     console.log("entered into post request  to insert new Invoice in database ")
     const invoice = new Invoice({
-        ISBN: req.body.ISBN,
-        img: req.body.img,
-        title: req.body.title,
-        author: req.body.author,
-        inventory: req.body.inventory,
-        category: req.body.category
+        InvoiceNo: req.body.InvoiceNo,
+        image: req.body.image,
+        Manufacturer: req.body.Manufacturer,
+        class: req.body.class,
+        Sales_in_thousands: req.body.Sales_in_thousands,
+            Vehicle_type: req.body.Vehicle_type,
+            Price_in_thousands: req.body.Price_in_thousands,
+            Engine_size: req.body.Engine_size,
+            Horsepower: req.body.Horsepower,
+            Wheelbase: req.body.Wheelbase,
+            Width: req.body.Width,
+            Length: req.body.Length,
+            Curb_weight: req.body.Curb_weight,
+            Fuel_capacity: req.body.Fuel_capacity,
+            Fuel_efficiency: req.body.Fuel_efficiency,
+            Latest_Launch: req.body.Latest_Launch,
+            Power_perf_factor: req.body.Power_perf_factor
     });
 
     try {
@@ -144,22 +164,13 @@ app.post('/api/invoices',async (req,res)=>{
         res.status(400).json({ message: error.message });
     }
 
-})
+});
 
 
-// Get all the data from database  based on the invoice f
-// app.get('/api/invoices', async (req, res) => {
-//     try {
-//         const invoices = await Invoice.find();
-//         res.json(invoices);
-//     } catch (err) {
-//         res.status(500).json({ message: err.message });
-//     }
-// });
 // fetch data using handelbars
 app.get('/api/invoices', async (req, res) => {
     try {
-        const invoices = await Invoice.find();
+        const invoices = await CarSales.find();
         res.render('invoices', { invoices:invoices });
     } catch (error) {
         res.status(500).send('Error: ' + error.message);
@@ -173,7 +184,8 @@ app.get('/api/invoices/:id', async (req, res) => {
         if (!invoice) {
             return res.status(404).send('Invoice not found');
         }
-        res.json(invoice);
+        // res.json(invoice);
+        res.render('invoices', { invoices:invoice });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -181,8 +193,8 @@ app.get('/api/invoices/:id', async (req, res) => {
 // update data 
 app.patch('/api/invoices/:id', async (req, res) => {
     const updates = {
-        manufacturer: req.body.manufacturer,
-        Price_in_thousand: req.body.Price_in_thousand
+        Manufacturer: req.body.Manufacturer,
+        Price_in_thousands: req.body.Price_in_thousands
     };
 
     try {
@@ -210,10 +222,8 @@ app.delete('/api/invoices/:id', async (req, res) => {
     }
 });
 
-// const PORT = process.env.PORT || 7000;
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
+
+
 
 app.listen(port);
 console.log("App listening on port : " + port);

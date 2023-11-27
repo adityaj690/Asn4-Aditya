@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Data Entry Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Car Data Entry</h2>
+        <form action="/api/invoices" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="invoiceNo">Invoice No</label>
+                    <input type="text" class="form-control" id="InvoiceNo" name="InvoiceNo" placeholder="606-80-4905">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="manufacturer">Manufacturer</label>
+                    <input type="text" class="form-control" id="Manufacturer" name="Manufacturer" placeholder="SEAT León">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="carClass">Class</label>
+                    <input type="text" class="form-control" id="class" name="class" placeholder="Small family car">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Sales_in_thousands">Sales in Thousands</label>
+                    <input type="number" class="form-control" id="Sales_in_thousands" name="Sales_in_thousands" placeholder="39.384">
+                </div>
+            </div>
+
+            <!-- More fields here -->
+            <!-- ... -->
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Vehicle_type">Vehicle_type</label>
+                    <input type="text" class="form-control" id="Vehicle_type" name="Vehicle_type" placeholder="Small car">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Price_in_thousands">Price_in_thousands</label>
+                    <input type="number" class="form-control" id="Price_in_thousands" name="Price_in_thousands" placeholder="3999.384">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Engine_size">Engine_size</label>
+                    <input type="number" class="form-control" id="Engine_size" name="Engine_size" placeholder="4.2">
+                </div>
+                 <div class="form-group col-md-6">
+                    <label for="Fuel_efficiency">Fuel Efficiency</label>
+                    <input type="number" class="form-control" id="Fuel_efficiency" name="Fuel_efficiency" placeholder="25">
+                </div>
+            </div>
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Horsepower">Horsepower</label>
+                    <input type="number" class="form-control" id="Horsepower" name="Horsepower" placeholder="Horsepower car">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Wheelbase">Wheelbase</label>
+                    <input type="number" class="form-control" id="Wheelbase" name="Wheelbase" placeholder="29.384">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Curb_weight">Curb_weight</label>
+                    <input type="number" class="form-control" id="Curb_weight" name="Curb_weight" placeholder="Curb_weight car">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Fuel_capacity">Fuel_capacity</label>
+                    <input type="number" class="form-control" id="Fuel_capacity" name="Fuel_capacity" placeholder="29.384">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Width">Width</label>
+                    <input type="text" class="form-control" id="Width" name="Width" placeholder="Width car">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Length">Length</label>
+                    <input type="text" class="form-control" id="Length" name="Length" placeholder="Length car">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Latest_Launch">Latest_Launch</label>
+                    <input type="number" class="form-control" id="Latest_Launch" name="Latest_Launch" placeholder="01/23/2023">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Power_perf_factor">Power Performance Factor</label>
+                    <input type="number" class="form-control" id="Power_perf_factor" name="Power_perf_factor" placeholder="91.37077766">
+                </div>
+            </div>
+                        <div class="form-row">
+ 
+                <div class="form-group col-md-6">
+                    <label for="image">Image(URL)</label>
+                    <input type="text" class="form-control" id="image" name="image" placeholder="www.abc.com">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
